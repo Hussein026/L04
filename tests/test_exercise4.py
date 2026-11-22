@@ -19,4 +19,4 @@ def test_r2_sql_injection():
     db = sqlite3.connect(":memory:")
     db.execute("CREATE TABLE users (username TEXT)")
     db.execute("INSERT INTO users VALUES ('alice')")
-    assert find_user(db, "'; DROP TABLE users; --") is None
+    assert find_user(db, "x' OR '1'='1") is None

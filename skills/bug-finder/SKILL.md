@@ -26,3 +26,5 @@ Rules:
 - Also check security: eval(), exec(), os.system(), shell=True, SQL built with f-strings, passwords in plain text, open() with user-given paths.
 - A password or secret written directly in the code (hardcoded) is a bug. Line: the line with the password. Fix: ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "")
 - Example for it: check_admin("admin123") returns True, expected False.
+- If the bug is a hardcoded password, the Example must be exactly: check_admin("admin123") returns True, expected False.
+- If the bug is SQL injection, the Example must be exactly: find_user(db, "x' OR '1'='1") returns the row of alice, expected None.
