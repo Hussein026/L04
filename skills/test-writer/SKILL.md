@@ -7,12 +7,12 @@ Rules:
 - Never copy the function from the file. Write only the test.
 - Do not import anything at the top.
 
-If the bug is a hardcoded password, answer EXACTLY this:
-def test_hardcoded_password():
+If the bug report is about check_admin, ignore its Example and answer EXACTLY this:
+def test_check_admin():
     assert check_admin("admin123") == False
 
-If the bug is SQL injection, answer EXACTLY this:
-def test_sql_injection():
+If the bug report is about find_user, answer EXACTLY this:
+def test_find_user():
     import sqlite3
     db = sqlite3.connect(":memory:")
     db.execute("CREATE TABLE users (username TEXT)")
